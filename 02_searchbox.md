@@ -17,7 +17,7 @@
 备注：
 1. 里面的search-id的css要自己去定义。您也可以参考我的源码：https://fullstack.xinshengdaxue.com/works/32
 2. 参考css样式
->.search-id {
+>'#search-id {
 width: 200px;
 padding-top: 7px;
 }
@@ -70,15 +70,15 @@ gem ‘seo_helper’
 ###STEP4: 修改routing
 在routes.rb中把
 >resources :jobs do
-    resources :resumes
+ resources :resumes
 end
 
 修改成：
 >resources :jobs do
-    resources :resumes
-    collection do
-      get :search
-    end
+  resources :resumes
+  collection do
+   get :search
+   end
   end
 
 重新开启rails server。
@@ -125,8 +125,8 @@ touch app/views/jobs/search.html.erb
 ###STEP 7: 实现搜索highlight功能
 在app/helpers/jobs_helper.rb里添加如下代码
 >def render_highlight_content(job,query_string)
-    excerpt_cont = excerpt(job.title, query_string, radius: 500)
-    highlight(excerpt_cont, query_string)
+  excerpt_cont = excerpt(job.title, query_string, radius: 500)
+  highlight(excerpt_cont, query_string)
   end
 
 接着把app/views/jobs/search.html.erb中的如下代码做修改：
@@ -145,6 +145,6 @@ https://github.com/RichardWeiYang/job-listing/pull/1/commits/23943b5107f846508d9
 https://github.com/RichardWeiYang/job-listing/pull/2/commits/5df93d881963d62751ca809ad8dadfef67a1a3b7
 
 
-2.在复制代码时请将上文中h2前的'去掉，这个markdown会直接将h2解读把代码中的汉字放大～
+2.在复制代码时请将上文中h2/#前的'去掉，这个markdown会直接将h2/#解读把代码中的汉字放大～
 ###版权声明
 [原文链接](http://forum.qzy.camp/t/navbar/486])
