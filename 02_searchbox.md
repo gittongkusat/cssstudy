@@ -14,11 +14,10 @@
       <% end %>
     </div>
 
-［此处插入正常代码图片］
 备注：
 1. 里面的search-id的css要自己去定义。您也可以参考我的源码：https://fullstack.xinshengdaxue.com/works/32
 2. 参考css样式
->'#search-id {
+>.search-id {
 width: 200px;
 padding-top: 7px;
 }
@@ -34,6 +33,7 @@ gem ‘seo_helper’
 备注：
 1. gem 'will_paginate-bootstrap'用来美化分页效果的。
 2. 执行：bundle install。执行完毕后，重新开启rails server。
+
 ###STEP3: 在jobs_controller.rb中添加相关功能方法
 在private之上添加如下代码：
 >def search
@@ -42,7 +42,6 @@ gem ‘seo_helper’
       @jobs = search_result.paginate(:page => params[:page], :per_page => 5 )
     end
   end
-
 
   >protected
 
@@ -100,8 +99,7 @@ touch app/views/jobs/search.html.erb
         <% @jobs.each do |job| %>
         <div class="row jobs-show">
           <div class="col-md-12 col-lg-9 col-lg-offset-1">
-            <div class="pull-right">
-              发布时间：<%= job.created_at.to_date %>
+            <div class="pull-right">发布时间：<%= job.created_at.to_date %>
             </div>
             <p ><%= link_to(render_highlight_content(job,@query_string),job_path(job)) %></p>
           </div>
@@ -137,8 +135,8 @@ touch app/views/jobs/search.html.erb
 改成：
 ><%= link_to(render_highlight_content(job, @query_string), job_path(job)) %>
 
-[原文链接](http://forum.qzy.camp/t/navbar/486])
-补充：
+
+###补充：
 1.from Daniel
 >我提交了修改方法到你的 pull requests 你可以参考一下：
 https://github.com/RichardWeiYang/job-listing/pull/1/commits/23943b5107f846508d9d0cb725b8727e6d4ae71e
@@ -148,3 +146,5 @@ https://github.com/RichardWeiYang/job-listing/pull/2/commits/5df93d881963d62751c
 
 
 2.在复制代码时请将上文中h2前的'去掉，这个markdown会直接将h2解读把代码中的汉字放大～
+###版权声明
+[原文链接](http://forum.qzy.camp/t/navbar/486])
