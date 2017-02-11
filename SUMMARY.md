@@ -6,4 +6,5 @@
 - [05_设置分类](05_category.md)
 - [06_数据库操作](06_DB.md) 
 - [07_“我”的](07_my.md)
+- [08_搜索和排序](08_search_and_sorting.md)
 - [15_工具集](15_tool.md)
