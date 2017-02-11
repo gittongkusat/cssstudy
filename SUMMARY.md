@@ -1,4 +1,9 @@
 #本书目录
 - [01.自定义devise](01_devise.md)
 - [02.自定义searchbox](02_searchbox.md)
-- [03_实现收藏夹](03_favorite.md)
+- [03_收藏夹](03_favorite.md)
+- [04_heroku操作](04_heroku.md)
+- [05_设置分类](05_category.md)
+- [06_数据库操作](06_DB.md) 
+- [07_“我”的](07_my.md)
+- [15_工具集](15_tool.md)
